@@ -7,19 +7,16 @@ export const chatSlice = createSlice({
     chatName: null,
   },
   reducers: {
-    login: (state, action) => {
+    setChat: (state, action) => {
       state.chatId = action.payload.chatId;
       state.chatName = action.payload.chatName;
-    },
-    logout: state => {
-      state.chat = null;
     }                 
   },
 });
 
 export const { setChat } = chatSlice.actions;
 
-export const selectChatName = state => state.chat.chatName;
 export const selectChatId = state => state.chat.chatId;
+export const selectChatName = state => state.chat.chatName;
 
 export default chatSlice.reducer;
